@@ -1,0 +1,26 @@
+<div class="tile l-circle-shadow animated fadeInRight" ng-repeat="answer in answeredData"  style="width: 180px;margin: 10px;display: inline-block;position:relative;">
+<a ng-href="{{window.location}}/#/answer/{{answer.quesAuthorId}}/{{answer.questionId}}" style="position:absolute;z-index: 2;left:0;right:0;top:0;bottom:0;"></a>
+                        <div class="l-tile-gradient" style="position: relative;border-radius: 4px 4px 0;">
+                            <div class="l-card c-font-white l-circle-shadow" ng-style="{'background-image': 'url(' +answer.locationImage+ ')'}" style="background-position:center;background-size:cover;position:relative;z-index:-1; border-radius:4px;min-height:145px;">
+
+                            </div>
+                            <div class="l-font-bebas c-font-white c-padding-10 c-font-slim" style="text-align: left; z-index: 1; position: absolute; top: 0px; line-height: normal;">{{answer.questionTitle}}</div>
+                            <div class="l-font-bebas c-font-white c-padding-10 c-font-slim" style="text-align: left; z-index: 1; position: absolute; bottom: 0px; line-height: normal;">{{answer.totalAnswers}} Places</div>
+
+                        </div>
+                        <div class="c-bg-white" style="padding-top: 6px; padding-bottom: 6px; display: -webkit-box; border-radius: 0px 0px 4px 4px;">
+
+                            <div style="margin-left: 10px;text-align: left;display: inline;">
+                                <a href="#" class="l-circle-shadow" ng-repeat="each in answer.profilePicArray track by $index | limitTo:3" style="margin-right: -10px;">
+                                    <img ng-src="{{each}}" width="35" height="35" style="border-radius: 100%;border: solid 1px #fff;">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 
+<div class="l-card c-font-white l-circle-shadow" ng-style="{'background-image': 'url(' +getPlacesImages(answer.gPlaceId)+ ')'}" style="background-position:center;background-size:cover;position:relative;z-index:-1; border-radius:4px;min-height:145px;">
+
+                            </div>
+                    -->

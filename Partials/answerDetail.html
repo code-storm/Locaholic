@@ -1,0 +1,165 @@
+<style>
+.animated {
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    }
+</style>
+<div ng-show="answerDetailCtrl.loading" style="background: #e2e2e2;z-index: 10;position: absolute;top: 0px;left: 0;bottom: 0px;right: 0px;">
+  <span style="position: absolute;top: 40%;font-size: 20px;left: 49%;" class="c-font-bold">Loading .. </span>
+  </div>
+<div class="container" style="min-height:100vh;">
+    <div class="clearfix"></div>
+    <div class="topMenu c-margin-t-20" style="">
+  <div style="display: flex;justify-content: space-between;">
+  <a href="javascript:void(0);"  ui-sref="Home.Recommend" style="">Close</a>
+  <a href="javascript:void(0);" style="">Ask More People</a>
+  <a href="javascript:void(0);" style="">Share</a>
+  </div>
+</div>
+    <div id="middleMenu" class="row" style="display: block;margin-top: 15px;">
+        <div class="col-md-4 col-md-offset-4 col-xs-12 col-sm-12">
+
+            <div class="c-margin-t-20">
+                <div class="row c-reset">
+                    <h1 class="c-center c-font-white c-font-thin">
+                    {{answerDetailCtrl.questionDetail.questionTitle}} around {{answerDetailCtrl.questionDetail.locationName}}
+                    </h1>
+
+                </div>
+
+            </div>
+           
+            <a ng-hide="answerDetailCtrl.myquestion" ui-sref="RecommendTip({personID: answerDetailCtrl.questionDetail.quesAuthorId , questionID: answerDetailCtrl.questionDetail.qId })" style="display: block;" class="c-center c-font-20">
+            <i class="fa fa-image" style="margin-right: 5px;"></i>Add more places</a>
+        </div>
+
+    </div>
+
+    <div class="bottom-menu">
+       <style type="text/css">
+           .carousel-3d-container
+           {height: 450px !important;}
+           .carousel-3d .slide-3d {
+    overflow: initial !important;
+}
+.carousel-3d-container > div {
+    text-align: center;
+}
+       </style>
+
+        <carousel3d ng-model="answerDetailCtrl.slides" options="answerDetailCtrl.options" on-selected-click="answerDetailCtrl.selectedClick(index)" on-slide-change="answerDetailCtrl.slideChanged(index)" on-last-slide="answerDetailCtrl.lastSlide(index)" on-before-change="answerDetailCtrl.beforeChange(index)" style='height: 300px;    overflow-x: hidden;
+    overflow-y: visible;'>
+
+            <carousel3d-slide ng-repeat="slide in answerDetailCtrl.slides track by $index">
+
+                <div class="tile animated fadeIn" style="list-style:none;margin:0px 5px;display: inline-block;">
+                <div class="m-map-image" style="margin: 10px 0;">
+                   <a href="{{slide.mapUrl}}" target="_blank"> <img ng-src="{{slide.mapImg}}" class="animated zoomIn" width="100%" style="border-radius: 6px;">
+                   </a>
+                </div>
+                  <div class="l-circle-shadow">
+                    <div class="l-tile-shadow" ng-click="recommendTipCtrl.checking(this);" style="cursor: pointer;position: relative;border-radius: 5px;background-position: center;background-image: url({{slide.src}});background-size: cover;height: 178px;width: 284px;">
+                        <!-- <a ui-sref="PlaceDetail({id: slide.pid})" title="{{slide.caption}}" style="position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;"></a> -->
+                        <div style="position: absolute;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;bottom: 0px;left: 0px;right: 0px;" class="c-font-white">
+
+                            <div style="padding-top: 5px;padding-bottom: 5px;display:table-row;" class="l-font-bebas">
+
+                                <div style="display: flex;">
+                                    <div style="padding: 3px;float: left;border-radius: 100%;" class="c-bg-white">
+                                        <span class="c-font-18 c-bg-white l-font-yellow ng-binding" style="width: 30px;text-align: center;display: inline-block;height: 30px;vertical-align: middle;line-height: 1.7;border: solid 1px #EFD453;border-radius: 100%;">{{slide.rating ? slide.rating : 3}}</span>
+                                    </div>
+
+
+                                </div>
+
+                                <div style="display: table-cell; width: 100%; ">
+                                    <span style="display: table; padding-left: 10px;padding-right:10px;line-height:1.1;" class="c-font-20 c-font-grey c-font-thin c-font-uppercase">{{slide.caption}}</span>
+                                  
+                                </div>
+                                <div style="display: flex;">
+                                    <a href="javascript:void(0);" style="color: #b5b5b5; font-family: initial; height: 35px; width: 35px; display: block; border-radius: 100%; line-height: 1.6; " class="c-bg-white c-font-20 c-center"><span>i</span></a>
+
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                    <div class="animated zoomIn" data-test="{{answerDetailCtrl.showArr[$index]}}" data-index="{{$index}}" ng-show="answerDetailCtrl.showArr[$index]" style="margin-top:20px;">
+                        <div class="row c-reset">
+                    <div class="c-reset c-center col-lg-3 col-md-3 col-xs-3 col-sm-3" style="margin-top: 8px;">
+                        <a href="javascript:void(0);">
+                            <img ng-src="{{slide.comment.profilePictureUrl}}" class="l-circle-shadow" width="48" height="48" style="border-radius: 100%;">
+
+                        </a>
+                    </div>
+                    <div style="padding-top: 7px;" class="c-reset text-left col-lg-9 col-md-9 col-sm-9 col-xs-9 l-comp-right">
+
+                        <div style="margin-bottom: 10px;">
+                            <span class="c-font-13 c-font-white c-font-slim"> {{slide.comment.authorName}}</span>
+                            <span class="c-font-11 l-font-grey-1 c-font-lowercase" style="display: block;">{{slide.comment.ansDate | timeago }}</span>
+                        </div>
+
+                        <div style="text-align: left;margin-top: 5px;display: inline-block;">
+                            <p class="c-font-13 c-font-white" style="margin-bottom: 5px;">{{slide.comment.commentArrayList}}</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+
+
+            </carousel3d-slide>
+
+        </carousel3d>
+
+         <div id="middleMenu row" style="display: none;margin-top: 15px;">
+        <div class="col-md-4 col-md-offset-4 col-xs-12 col-sm-12">
+
+            <div class="c-margin-t-20" style="margin-bottom: 15px;">
+                <div class="row c-reset" ng-repeat="answer in answerDetailCtrl.ANSWERS">
+                    <div class="c-reset c-center col-lg-3 col-md-3 col-xs-3 col-sm-3" style="margin-top: 8px;">
+                        <a href="javascript:void(0);">
+                            <img ng-src="{{answer.profilePictureUrl}}" width="48" height="48" style="border-radius: 100%;">
+
+                        </a>
+                        <div class="c-center" style="margin-top: 5px;">
+                            <p class="c-font-11 c-font-white" style="margin: 0px;">{{answer.name}}</p>
+                        </div>
+                    </div>
+                    <div style="padding-top: 7px;padding-left: 18px;padding-right: 10px;" class="c-reset col-lg-9 col-md-9 col-sm-9 col-xs-9 l-comp-right">
+
+
+
+                        <div style="text-align: left;">
+                            <p class="c-font-14 c-font-slim c-font-white" style="margin-bottom: 5px;">{{answer.answer}}</p>
+                        </div>
+
+                        <div style="display: flex;margin-bottom: 10px;">
+                            <span class="c-font-11 l-font-grey-1 c-font-lowercase">{{answer.ansDate | timeago }}</span>
+                        </div>
+
+						<div style="text-align: left;margin-top: 5px;display: inline-block;">
+                            <p class="c-font-13 c-font-white" style="margin-bottom: 5px;">{{answer.commentArrayList}}</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <hr style="border-color: rgba(243, 243, 243, 0.25);width:88%;" />
+        </div>
+
+    </div>
+
+        <link href="bower_components/angular-carousel-3d/dist/carousel-3d.css" rel="stylesheet" />
+    </div>
+</div>
+<div id="map2"></div>

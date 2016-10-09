@@ -1,0 +1,116 @@
+﻿<div class="container">
+    <div class="clearfix"></div>
+    <div id="middleMenu row" style="display: -webkit-box;margin-top: 15px;">
+        <div class="col-md-4 col-md-offset-4 col-xs-12 col-sm-12">
+
+            <div class="c-margin-t-20" style="margin-bottom: 15px;">
+                <div class="row c-reset">
+                    <div class="c-reset c-center col-lg-3 col-md-3 col-xs-3 col-sm-3">
+                        <a href="javascript:void(0);">
+                            <img ng-src="{{recommendTipCtrl.userImg}}" width="48" height="48" style="border-radius: 100%;">
+
+                        </a>
+                        <div class="c-center" style="margin-top: 5px;">
+                            <p class="c-font-11 c-font-white" style="margin: 0px;">{{recommendTipCtrl.questionAskedBy}}</p>
+                        </div>
+                    </div>
+                    <div style="padding-top: 7px;padding-left: 18px;padding-right: 10px;" class="c-reset col-lg-9 col-md-9 col-sm-9 col-xs-9 l-comp-right">
+
+
+
+                        <div style="text-align: left;">
+                            <p class="c-font-14 c-font-white">{{recommendTipCtrl.data.questionTitle}}</p>
+                        </div>
+
+                        <div style="display: flex;/* float: left; */margin-bottom: 10px;">
+                            <span class="c-font-11 l-font-grey-1 c-font-capitalize">{{recommendTipCtrl.data.locationName}}</span>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <hr style="border-color: rgba(243, 243, 243, 0.25);width:88%;" />
+        </div>
+
+    </div>
+
+    <div class="bottom-menu">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-12 col-sm-12">
+                <input id="location" autofocus="autofocus" gautocompwithrestriction my-places="myPlacesImages" country-name="countryName" ng-model="chosenPlace" placeholder="Search to add places   &#xE090;" class="l-main-placeholder c-font-white c-font-20" style="padding-bottom: 5px; border-bottom: none !important; margin: 0px 15px 10px 0; width: 100%; display: block;">
+
+            </div>
+        </div>
+
+        <carousel3d ng-show="recommendTipCtrl.slides" ng-model="recommendTipCtrl.slides" options="recommendTipCtrl.options" on-selected-click="recommendTipCtrl.selectedClick(index)" on-slide-change="recommendTipCtrl.slideChanged(index)" on-last-slide="recommendTipCtrl.lastSlide(index)" on-before-change="recommendTipCtrl.beforeChange(index)">
+
+            <carousel3d-slide ng-repeat="slide in recommendTipCtrl.slides">
+
+                <div class="tile l-circle-shadow animated fadeIn" style="list-style:none;margin:0px 5px;display: inline-block;">
+                    <div class="l-tile-shadow" ng-click="recommendTipCtrl.checking(this);" style="position: relative;border-radius: 5px;background-position: center;background-image: url({{slide.src}});background-size: cover;height: 178px;width: 284px;">
+
+                        <div style="position: absolute;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;bottom: 0px;left: 0px;right: 0px;" class="c-font-white">
+
+                            <div style="padding-top: 5px;padding-bottom: 5px;display:table-row;" class="l-font-bebas">
+
+                                <div style="display: flex;">
+                                    <div style="padding: 3px;float: left;border-radius: 100%;" class="c-bg-white">
+                                        <span class="c-font-18 c-bg-white l-font-yellow ng-binding" style="width: 30px;text-align: center;display: inline-block;height: 30px;vertical-align: middle;line-height: 1.7;border: solid 1px #EFD453;border-radius: 100%;">{{slide.rating ? slide.rating : 2 }}</span>
+                                    </div>
+
+
+                                </div>
+
+                                <div style="display: table-cell; width: 100%; ">
+                                    <a ui-sref="PlaceDetail({id: slide.pid})" title="{{slide.caption}}">
+                                        <span style="display: table; padding-left: 10px;padding-right:10px;line-height:1.1;" class="c-font-20 c-font-grey c-font-thin c-font-uppercase">{{slide.caption}}</span>
+                                    </a>
+                                </div>
+                                <div style="display: flex;">
+                                    <a href="javascript:void(0);" style="color: #b5b5b5; font-family: initial; height: 35px; width: 35px; display: block; border-radius: 100%; line-height: 1.6; " class="c-bg-white c-font-20 c-center"><span>i</span></a>
+
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </carousel3d-slide>
+
+        </carousel3d>
+
+        <div aria-labelledby="tipbox">
+            <div class="row" style="margin-bottom:20px;">
+                <div class="col-md-4 col-md-offset-4" style="text-align: center;">
+                    <textarea class="l-tip-placeholder c-font-white" rows="3" ng-model="recommendTipCtrl.tip" placeholder="Do you have a tip? &#x0A; Write it here and let other know." style="background-color: transparent;width: 88%;outline: none;text-align: center;border-radius: 5px;border: solid 1px rgba(255, 255, 255, 0.41);padding: 47px 10px 16px;"></textarea>
+                    <hr style="border-color: rgba(255, 255, 255, 0.41); margin-bottom: 0px; width: 88%;" />
+                    <p style="display: inline-flex;">
+                        <a  href='javascript:void(0);' ui-sref="Home.Recommend" style="display: inline-block;" class="c-font-grey c-padding-20">
+                            <i class="icon-close" style="display: block;"></i>
+                            Cancel
+                        </a>
+                        <a href="#" style="display: inline-block;" class="c-font-grey c-padding-20">
+                            <i class="icon-clock" style="display: block;"></i>
+                            Postpone
+                        </a>
+                        <a href="javascript:void(0);" ng-click="recommendTipCtrl.send();" style="display: inline-block;" class="c-font-grey c-padding-20">
+                            <i class="icon-logout" style="display: block;transform:rotate(180deg)"></i>
+                            Send
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <link href="bower_components/angular-carousel-3d/dist/carousel-3d.css" rel="stylesheet" />
+    </div>
+</div>
+<div id='mapforPlaces'></div>

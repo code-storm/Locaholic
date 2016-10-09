@@ -1,0 +1,126 @@
+    <div class="animated fadeInRight">
+     <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="$ctrl.cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modal-title">Ask your friend for a tip<i class="fa fa-share-alt"></i></h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+         <div id="social-share" style="text-align: center;">
+    <div class="row c-reset">
+        <input type="text" ng-show="$ctrl.showInput" class="form-control c-square c-border-2px c-theme" readonly="" id="inputUniqueUrl" ng-model="$ctrl.shareLink" style="display: inline-block;width: 70%;margin-left: 16px;padding-right: 28px;">
+        <span ng-show="$ctrl.showInput"  data-clipboard-target="#inputUniqueUrl" style="display: inline-block;position: relative;right: 30px;">
+                                <a class="fa fa-link c-font-dark" href="javascript:void(0);" style="/* margin-left: 20px; */"></a>
+                            </span>
+    </div>
+    <div class="c-container" style="margin-top: 10px;">
+      <div id="m-friends-list"> 
+       <label>ALL<input type="checkbox" ng-model="$ctrl.selectedAll" ng-click="$ctrl.updateAll();" name=""></label>
+    <label ng-repeat="frn in $ctrl.frndsCollection" style="list-style:none;display:inline-block;margin:10px;"> 
+                 <img class="animated zoomIn l-circle-shadow" ng-src="{{frn.profilePictureUrl}}" width="48" height="48" style="border-radius: 100%;">
+
+                        <input type="checkbox" name="checkbox" value="{{frn.userId}}" ng-model="$ctrl.formData[frn.userId]">
+     <span style="display: block;" class="c-font-13 c-font-slim"> {{frn.name}}  </span>
+    </label>
+    </div>
+   
+    <a href="javascript:void(0);" ng-click="$ctrl.send();" style="padding: 3px 10px;border: solid 2px;border-radius: 20px;
+    display: inline-block;color:#656565;margin-bottom:20px;"><i class="fa fa-paper-plane"></i> Send</a>
+    <div class="social-share animated zoomIn" ng-show="$ctrl.showInput" >
+    <p class="c-center">OR</p>
+        <div class="row c-center c-reset">
+            <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="//www.facebook.com/sharer/sharer.php?u={{$ctrl.shareLink}}"
+                title="Share Locaholic on Facebook" class="btn btn-xs c-btn-blue-3 c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px; background-color: #3b5998;height: 40px;">
+                <i class="fa fa-facebook" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+
+            <a target="_blank" href="https://twitter.com/home?status=Hey.%0AHave%20you%20checked%20this%20out%20yet!?%0A{{$ctrl.shareLink}}"
+                title="Share Locaholic on Twitter" class="btn btn-xs c-btn-blue-3 c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px; background-color: #dd4b39;height: 40px;">
+                <i class="fa fa-google-plus" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+
+            <a target="_blank" href="https://plus.google.com/share?url={{$ctrl.shareLink}}"
+                title="Share Locaholic on Google Plus" class="btn btn-xs c-btn-blue-3 c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px; background-color: #2795e9;height: 40px;">
+                <i class="fa fa-twitter" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+
+            <a target="_blank" href="whatsapp://send?text=Hey.%0AHave%20you%20checked%20this%20out%20yet!?%0A{{$ctrl.shareLink}}" data-action="share/whatsapp/share" title="Share Locaholic on Whatsapp" class="btn btn-xs c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px;background-color: #34af23;height: 40px;">
+                <i class="fa fa-whatsapp c-font-white" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+
+            <a target="_blank" href="mailto:?&subject=Hey! Check this out.&body={{$ctrl.shareLink}}" title="Share Locaholic on Email" class="btn btn-xs c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px;background-color: #949494;height: 40px;">
+                <i class="icon-envelope c-font-white" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+        </div>
+     </div>
+    </div>
+</div>
+           
+        </div>
+        <div class="modal-footer">
+        </div>
+    </script>
+            <div class="clearfix"></div>
+            <div id="middleMenu row" style="margin-top: 15px;">
+                <div class="col-md-6 col-md-offset-3 col-xs-12 col-sm-12">
+                    <input id="askquestion" type="text" ng-model="askedQuestion" autofocus="autofocus" placeholder="What are you looking for?" class="l-main-placeholder autoExpand c-font-white c-font-20" style="min-height: 33px;padding-bottom: 5px;margin: 0px 0px 15px 0;width: 100%;">
+                    <input googleautocomplete id="location" placeholder="Where?" ng-model="chosenPlace" class="l-main-placeholder c-font-white c-font-20" style="padding-bottom: 5px;margin: 0px 15px 10px 0;width: 100%;display: block;">
+                    <a href="javascript:void(0);" ng-click="askCtrl.open();" class="c-font-20 c-font-white" style="padding-bottom: 5px;padding-top: 30px;margin: 0px 0px 10px 0;display: block;text-align: center;">
+                        Send<span style="border-radius: 100%;display: inline-block;width: 18px;border: solid 1px;text-align: center;height: 18px;vertical-align: middle;margin-left: 8px;position: relative;bottom: 2px;">
+                            <i class="fa fa-angle-right" style="font-size: 16px;display: block;"></i>
+                        </span>
+                    </a>
+                </div>                
+            </div>
+        <div class="clearfix"></div>
+            <div id="bottomMenu" style="margin-top:50px;margin-left:15px;margin-bottom:20px;text-align: center;">
+                <div class="replied_tab">
+                <h3 class="c-font-white c-font-18 c-font-slim"> Replied</h3>
+                <ask-answered-tile-directive class="m-custom-scrollbar" style="-webkit-overflow-scrolling:touch;overflow-scrolling:touch;overflow-x: auto;white-space: nowrap;display: list-item;list-style: outside none none;width: auto;align-items: baseline;justify-content: center;"></ask-pending-tile-directive>
+                    
+                    </div>
+                <div id="pending_tab">
+                    <h3 class="c-font-white c-font-18 c-font-slim">Pending</h3>
+                    
+                    <ask-pending-tile-directive class="m-custom-scrollbar" style="-webkit-overflow-scrolling:touch;overflow-scrolling:touch;overflow-x: auto;white-space: nowrap;display: list-item;list-style: outside none none;width: auto;align-items: baseline;justify-content: center;"></ask-pending-tile-directive>
+                </div>
+            </div>
+</div>
+            <!-- Ask Modal -->
+<!--<script type="text/ng-template" id="myModalContent.html">
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="social sharing links">
+    <div class="modal-dialog modal-sm" role="document" style=" margin-top: 83px;">
+        <div class="modal-content c-square">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="askCtrl.cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modal-title">Share <i class="fa fa-share-alt"></i></h4>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <div id="social-share">
+                    <div class="grouplink" style="display:table;">
+                        <input type="text" class="form-control c-square c-border-2px c-theme" readonly id="inputEmail3-88" value="{{askCtrl.shareLink}}"
+                            style="display: table-cell;margin-left: 16px;">
+                        <span style="display: table-cell;">
+                                <a class="fa fa-link" href="#" style="margin-left: 20px;"></a>
+                            </span>
+                    </div>
+                    <div class="c-container" style="margin-top: 10px;">
+
+                        <div class="row c-center c-reset">
+                            <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="//www.facebook.com/sharer/sharer.php?u=https://www.locaholic.co"
+                                title="Share Locaholic on Facebook" class="btn btn-xs c-btn-blue-3 c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px; background-color: #3b5998;height: 40px;">
+                                <i class="fa fa-facebook" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+
+                            <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="//www.facebook.com/sharer/sharer.php?u=https://www.locaholic.co"
+                                title="Share Locaholic on Facebook" class="btn btn-xs c-btn-blue-3 c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px; background-color: #dd4b39;height: 40px;">
+                                <i class="fa fa-google-plus" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+
+                            <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="//www.facebook.com/sharer/sharer.php?u=https://www.locaholic.co"
+                                title="Share Locaholic on Facebook" class="btn btn-xs c-btn-blue-3 c-btn-circle c-font-15" style="width: 40px;margin: 5px;border-radius: 2px;font-size: 15px;border: 0px; background-color: #2795e9;height: 40px;">
+                                <i class="fa fa-twitter" style="line-height: 1.9;margin: 0px;font-size: 20px;"></i></a>
+                        </div>
+
+                    </div>
+                </div>         </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+</script>-->
+
+

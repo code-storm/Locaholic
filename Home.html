@@ -1,0 +1,30 @@
+﻿<div class="container" style="z-index: 1;padding-top:30px;position:relative;min-height:100vh;"><div id="topMenu row" style="margin-bottom: 10px;display: -webkit-box;text-align: center;"><div class="animated fadeInDown c-font-slim col-md-10 col-md-offset-1 col-sm-11 col-xs-11"><ul class="nav navbar-nav c-theme-nav l-menu" style="float: none;margin: -4px 0px 0px;display: inline-block;"><li><a ui-sref=".Ask" ui-sref-active="active" class="l-menu-pad c-center" style=" padding: 15px 18px;">Ask</a>
+</li>
+<li>
+    <a ui-sref=".Recommend" ui-sref-active="active" class="l-menu-pad c-center" style="padding: 15px 18px;">
+                                Recommend
+                                <span ng-show="recommendBubble" style="color: #fff;background-color: #ff6161;width: 18px;height: 18px;border-radius: 100%;position: relative;font-size: 12px;right: 0px;top: -11px;text-align: center;display: inline-block;">{{recommendBubble}}</span>
+                            </a>
+</li>
+</ul>
+</div>
+<div class="c-font-slim col-md-1 col-sm-1 col-xs-1 c-reset">
+    <ul style="list-style: none;margin: 0px;">
+        <li style="float: right; display: inline-flex;">
+            <a href="javascript:void(0);" ng-click="hCtrl.showMenu=!hCtrl.showMenu" class="c-font-white l-menu-pad"><i class="fa fa-ellipsis-v"></i></a>
+        </li>
+        <ul ng-show="hCtrl.showMenu" style="list-style: none;text-align: left;z-index:1;position: absolute;top: 33px;border: solid 1px#777;padding: 3px;display: inline;width: 100px;left: -37px;">
+            <li style="padding: 3px 10px;border-bottom: solid #888888 1px;background-color: rgba(58, 58, 58, 0.51);">
+                <a href="javascript:void(0);">Profile</a>
+            </li>
+            <li style="padding: 3px 10px;background-color: rgba(58, 58, 58, 0.51);">
+                <a href="javascript:void(0);" ng-click="hCtrl.logOut();">Log out</a>
+            </li>
+        </ul>
+    </ul>
+</div>
+</div>
+<ui-view></ui-view>
+</div>
+
+<div id="map2"></div>

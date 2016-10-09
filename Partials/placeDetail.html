@@ -1,0 +1,128 @@
+﻿<div class="col-md-12 c-reset rest-detail" style="z-index: 1000; display: block;height:100vh;">
+
+    <div class="midbar-places-content" style="display: block;">
+        <div class="l-midbar-gradient" style="z-index: 1;">
+            <div class="" style="position: relative;z-index: -1; background-position: center;background-image: url({{detailObj.photos[0].getUrl({ 'maxWidth': 1600, 'maxHeight': 800 })}}); background-size: cover;">
+
+                <div style="padding-bottom: 10px;padding-left: 10px;padding-top: 180px;padding-right: 10px;" class="c-font-white">
+
+                    
+                </div>
+
+            </div>
+            <div style="left: 0px;position: absolute;top: 7px;right: 0px;">
+                <a href='javascript:void(0);' ng-click='goBack()'><i class="loca-back c-font-dark" style="padding: 10px 5px 10px 15px;float:left;"></i></a>
+
+                <p class="c-font-dark c-font-15 c-font-slim c-center" style="margin: 0px;padding-right:20px;">{{detailObj.name}}
+                    <span class="c-font-capitalize c-font-dark c-font-11 c-center" style="display:block;">
+                        {{detailObj.types[0]}}
+                    </span>
+                </p>
+               
+            </div>
+        </div>
+        <div class="c-center l-map-shadow" style="background-position: center top;background-size: 629px 503px;padding-bottom: 10px;padding-top: 35px;position: relative;background-image: url(images/map.jpg);background-attachment:fixed;">
+            <p class="c-font-20" style="
+margin-bottom: 5px;
+"><i class="icon-map"></i></p>
+            <p class="c-font-13 c-font-sbold" style="
+margin: 0px;
+">{{detailObj.vicinity}}</p><p class="c-font-11 c-font-slim"><a href="{{detailObj.url}}" target="_blank" style="color: #3f444a;">Show full map</a></p>
+        </div>
+
+        <div class="c-center c-font-13 c-bg-white" style="
+padding: 10px;
+">Ratings</div>
+        <div class="row c-center c-bg-white c-reset">
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" style="border-right: #E6E6E6 solid 1px;">
+                <p style="margin:0px;">
+                    <span style="color: #EFD453;">
+                        {{detailObj.rating}}
+                    </span>
+                    <span class="fa fa-star-o c-font-13" style="
+color: #d0d0d0;
+"></span>
+                </p>
+                <p class="c-font-11" style="
+color: #d0d0d0;
+">Web avg</p>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" style="
+border-right: #E6E6E6 solid 1px;
+">
+                <p style="margin:0px;">
+                    <span style="color: #EFD453;">
+                        4.2
+                    </span>
+                    <span class="fa fa-star-o c-font-13" style="
+color: #d0d0d0;
+"></span>
+                </p>
+                <p class="c-font-11" style="
+color: #d0d0d0;
+">Friends</p>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+                <p style="margin:0px;">
+                    <span style="
+color: #d0d0d0;
+">
+                        3.1
+                    </span><span class="fa fa-star-o c-font-13" style="
+color: #d0d0d0;
+"></span>
+                </p>
+                <p class="c-font-11" style="
+color: #d0d0d0;
+">Yours</p>
+            </div>
+        </div>
+        <div class="c-center c-bg-white c-font-13" style="
+padding-top: 20px;
+">
+            <p style="/* margin: 0px; */position: relative;">
+                Recommended by<i class="loca-thumbsup c-font-bold c-font-25" style="top: -7px;opacity: 0.15;left: 0;position: absolute;right: 0;"></i>
+            </p>
+            <p style="margin-bottom: -15px;position: relative;z-index: 1;" class="c-margin-t-10">
+                <img  ng-repeat="reviewUser in detailObj.reviews" ng-src="{{reviewUser.profile_photo_url ? reviewUser.profile_photo_url: 'images/avatars/untitled.jpg'}}" width="35px" height="35px" class="l-r-100 l-circle-shadow" style="margin: 0 5px;">
+            </p>
+        </div>
+        <div class="c-center c-bg-grey-1 c-font-13" style="position: relative;padding: 50px 15px 0px;">
+            <p style="padding-bottom: 10px;position: relative;">
+                Tips and comments<i class="loca-comment c-font-bold c-font-25" style="top: -5px;opacity: 0.15;left: 0;position: absolute;right: 0;
+"></i>
+            </p>
+            <div ng-repeat="review in detailObj.reviews" class="c-bg-white c-margin-10 l-recommend-div" style="margin-bottom: 15px;">
+                <div class="row c-reset">
+                    <div class="c-reset col-lg-2 col-md-2 col-xs-2 col-sm-2">
+                        <a href="javascript:void(0);">
+                            <img ng-src="{{review.profile_photo_url ? review.profile_photo_url: 'images/avatars/untitled.jpg'}}" width="48px" height="48px" style="border-radius: 100%;">
+
+                        </a>
+                    </div>
+                    <div style="padding-top: 7px;" class="c-reset col-lg-10 col-md-10 col-sm-10 col-xs-10 l-comp-right">
+                        <div class="l-flex">
+                            <span class="c-font-15 c-font-bold c-font-dark">{{review.author_name}}</span>
+                        </div>
+                        <div class="l-flex">
+                            <span class="c-font-10 c-font-grey-3">{{review.time * 1000 | date:'dd-MM-yyyy'}}</span>
+                        </div>
+
+                        <div class="l-flex" style="text-align: left;">
+                            <span class="c-font-13 c-margin-t-10 c-font-dark">
+                                {{review.text}}
+                            </span>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<div id="map2"></div>

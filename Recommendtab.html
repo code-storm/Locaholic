@@ -1,0 +1,56 @@
+            <div class="animated fadeInRight">
+            <div class="clearfix"></div>
+            <div id="middleMenu row" style="margin-top: 15px;">
+                <div class="col-md-6 col-md-offset-3 col-xs-12 col-sm-12">
+                    <input id="askquestion" type="text" autofocus="autofocus" placeholder="Title of your recommendation" class="l-main-placeholder autoExpand c-font-white c-font-20" style="min-height: 33px;padding-bottom: 5px;margin: 0px 0px 15px 0;width: 100%;">
+                    <input id="location1" placeholder="Search Places" ng-model="chosenPlace" class="l-main-placeholder c-font-white c-font-20" style="padding-bottom: 5px;margin: 0px 15px 10px 0;width: 100%;display: block;">
+                    <a href="javascript:void(0);" class="c-font-20 c-font-white" style="padding-bottom: 5px;padding-top: 30px;margin: 0px 0px 10px 0;display: block;text-align: center;">
+                        Send<span style="border-radius: 100%;display: inline-block;width: 18px;border: solid 1px;text-align: center;height: 18px;vertical-align: middle;margin-left: 8px;position: relative;bottom: 2px;">
+                            <i class="fa fa-angle-right" style="font-size: 16px;display: block;"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div id="bottomMenu" style="margin-top:50px;margin-left:15px;margin-bottom:20px;text-align: center;">
+
+                <div class="pending_tab">
+                    <h3 class="c-font-white c-font-18 c-font-slim">Pending</h3>
+                    <recommend-pending-tile-directive class="m-custom-scrollbar" style="overflow-x: auto;white-space: nowrap;display: list-item;list-style: outside none none;width: auto;align-items: baseline;justify-content: center;"></recommend-pending-tile-directive>
+                </div>
+
+                <div class="replied_tab">
+                <h3 class="c-font-white c-font-18 c-font-slim"> Replied</h3>
+                    <recommend-answered-tile-directive class="m-custom-scrollbar" style="overflow-x: auto;white-space: nowrap;display: list-item;list-style: outside none none;width: auto;align-items: baseline;justify-content: center;"></recommend-answered-tile-directive>
+
+                    <div class="tile l-circle-shadow" style="width: 200px;margin: 10px;display: none;">
+                        <div class="l-tile-gradient" style="position: relative;border-radius: 4px 4px 0;">
+                            <div class="l-card c-font-white l-circle-shadow" style="background-image:url('Images/rest/rest-6.jpg');background-position:center;background-size:cover;position:relative;z-index:-1; border-radius:4px;min-height:145px;">
+
+                            </div>
+                            <div class="l-font-bebas c-font-white c-padding-10 c-font-slim" style="text-align: left; z-index: 1; position: absolute; top: 0px; line-height: normal;">Places to take best panoramic photos</div>
+                            <div class="l-font-bebas c-font-white c-padding-10 c-font-slim" style="text-align: left; z-index: 1; position: absolute; bottom: 0px; line-height: normal;">2 Places</div>
+
+                        </div>
+                        <div class="c-bg-white" style="padding-top: 6px; padding-bottom: 6px; display: -webkit-box; border-radius: 0px 0px 4px 4px;">
+
+                            <div style="margin-left: 10px;text-align: left;display: inline;">
+                                <a href="#" class="l-circle-shadow" style="margin-right: -10px;">
+                                    <img src="images/avatars/team2.jpg" width="35" height="35" style="border-radius: 100%;border: solid 1px #fff;">
+                                </a>
+
+
+                                <a href="#" class="l-circle-shadow" style="margin-right: -10px;">
+                                    <img src="images/avatars/team6.jpg" width="35" height="35" style="border-radius: 100%;border: solid 1px #fff;">
+                                </a>
+                                <a href="#" style="margin-right: -10px;" class="l-circle-shadow">
+                                    <img src="images/avatars/team10.jpg" width="35" height="35" style="border-radius: 100%;border: solid 1px #fff;">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+                
+            </div>
+</div>

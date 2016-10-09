@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'locaholic';
+    src:    url('fonts/locaholic.eot?1477pa');
+    src:    url('fonts/locaholic.eot?1477pa#iefix') format('embedded-opentype'),
+        url('fonts/locaholic.ttf?1477pa') format('truetype'),
+        url('fonts/locaholic.woff?1477pa') format('woff'),
+        url('fonts/locaholic.svg?1477pa#locaholic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="loca-"], [class*=" loca-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'locaholic' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.loca-comment:before {
+    content: "\e903";
+}
+.loca-search:before {
+    content: "\e912";
+}
+.loca-back:before {
+    content: "\e900";
+}
+.loca-check-circle:before {
+    content: "\e901";
+}
+.loca-clock:before {
+    content: "\e902";
+}
+.loca-globe:before {
+    content: "\e904";
+}
+.loca-gps-location:before {
+    content: "\e905";
+}
+.loca-navbar:before {
+    content: "\e906";
+}
+.loca-close:before {
+    content: "\e907";
+}
+.loca-like:before {
+    content: "\e908";
+}
+.loca-pointer:before {
+    content: "\e909";
+}
+.loca-logo:before {
+    content: "\e90a";
+}
+.loca-menu:before {
+    content: "\e90b";
+}
+.loca-pen:before {
+    content: "\e90c";
+}
+.loca-phone:before {
+    content: "\e90d";
+}
+.lova-pointer-map:before {
+    content: "\e90e";
+}
+.loca-speech-bubble:before {
+    content: "\e90f";
+}
+.loca-thumbsup2:before {
+    content: "\e910";
+}
+.loca-thumbsup:before {
+    content: "\e911";
+}

@@ -1,0 +1,22 @@
+<div class="tile l-circle-shadow animated fadeInRight" ng-repeat="items in questIds | orderBy:date:true | filter:{answered :'false'}" style="min-width: 200px;width: 200px;margin: 10px;display: inline-block;position:relative;">
+<a ng-href="{{window.location}}/#/question?personID={{items.quesAuthorId}}&questionID={{items.qId}}" style="position:absolute;z-index: 2;left:0;right:0;top:0;bottom:0;"></a>
+
+                        <div class="l-card c-bg-white l-circle-shadow" style="border-radius: 4px;min-height: 105px;">
+                            <div class="l-font-bebas c-padding-10 c-font-slim" style="white-space: initial;text-align: left;padding-bottom: 0px;line-height: normal;">{{items.questionTitle}}</div>
+                            <div class="l-font-bebas c-padding-10 c-font-slim" style="white-space: initial;text-align: left;color: #b4b4b4;line-height: normal;">{{items.locationName}}</div>
+                            <div class="c-bg-white" style="padding-bottom: 6px;display: -webkit-box;border-radius: 0px 0px 4px 4px;">
+
+                              <div style="margin-left: 10px;display: table;text-align: left;">
+                               <a href="#" class="l-circle-shadow ng-scope" style="display: inline-table;margin-right: 5px;">
+                                    <img ng-src="{{items.profilePic}}" width="35" height="35" style="border-radius: 100%;border: solid 1px #fff;margin-top: 10px;">
+                                    </a>
+    <div class="l-font-bebas" style="display: inline-table;padding-top: 0px;">{{items.fullName}}
+    	<span style="display: block;color: #b4b4b4;" class="c-font-12">{{items.quesDate | timeago }}</span>
+      </div>
+                                </div>
+
+                                                    </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    

@@ -1,0 +1,28 @@
+<div class="tile l-circle-shadow animated fadeInRight" ng-repeat="item in listObj | orderBy:date:true  | filter:{answered :'false'}" style="min-width: 200px;width: 200px;margin: 10px;display: inline-block;">
+
+                        <div class="l-card c-bg-white l-circle-shadow" style="border-radius: 4px;min-height: 105px;">
+                            <div class="l-font-bebas c-padding-10 c-font-slim" style="white-space: initial;text-align: left;padding-bottom: 0px;line-height: normal;">{{item.questionTitle}}</div>
+                            <div class="l-font-bebas c-padding-10 c-font-slim" style="white-space: initial;text-align: left;color: #b4b4b4;line-height: normal;">{{item.locationName}}</div>
+                            <div class="c-bg-white" style="padding-top: 6px;">
+
+                                <div style="display:none;margin-left: 10px;margin-bottom: 10px;display: flex;float: left;">
+                                    <a href="javascript:void(0);" ng-click="askCtrl.open('md',item.$id,'fromAskPending');" class="l-send-btn c-font-15">
+                                        <span class=" l-icon-transition" style="display: -webkit-inline-box;">
+                                            <i class="fa fa-send c-bg-grey " style="color: #b5b5b5;text-align: center;width: 30px;border-radius: 100%;height: 30px;padding-top: 8px;"></i>
+                                        </span>
+                                        <span class="c-font-slim l-font-bebas c-font-dark-3 c-font-15"> Send</span>
+                                    </a>
+
+                                </div>
+
+                                <div style="margin-right: 10px;margin-bottom: 10px;float: right;display: flex;">
+                                    <a ng-href="{{window.location}}/#/tip/{{item.$id}}" style="position: relative;bottom: -15px;display:none;">
+
+                                        <span class="c-font-slim l-font-bebas l-hover-black c-font-13" style="color: #b4b4b4;">Edit</span>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
