@@ -65,7 +65,7 @@ var deferred2 = $q.defer();
                       var de = PlacesApi.search(proValue.aS.locationId);
                         de.then(function (response) {
                           if(response.photos === undefined)
-                               bannerImg = '/images/placeholder-sm-min.jpg';
+                               bannerImg = 'Images/placeholder-sm-min.jpg';
 
                            else
                            bannerImg = response.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 200 });
