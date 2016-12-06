@@ -226,7 +226,7 @@ app.controller("locaCtrl", Customer)
 			})
 			.state('Home.Recommend', {
 				url: '/Recommend',
-				templateUrl: '/Recommendtab.html',
+				templateUrl: 'Recommendtab.html',
 				controller: 'recommendController',
 				controllerAs: 'recommendCtrl'
 				// resolve: {
@@ -244,7 +244,7 @@ app.controller("locaCtrl", Customer)
 			.state('RecommendTip',
 			{
 				url: '/question?:personID&:questionID',
-				templateUrl: '/RecommendTip.html',
+				templateUrl: 'RecommendTip.html',
 				controller: 'recommendTipController',
 				controllerAs: 'recommendTipCtrl',
 				resolve : {
@@ -472,7 +472,7 @@ var bannerImg = getMyRecommendations.then(function(answers) {
 			var defer = $q.defer();
 			var de = PlacesApi.search(answers[x].locationId).then(function (response) {
 			    if(response.photos === undefined)
-			        return '/images/placeholder-sm-min.jpg';
+			        return 'Images/placeholder-sm-min.jpg';
 
 			     else
 			     	return response.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 200 });
@@ -711,7 +711,7 @@ function recommendTipCtrl($scope,GeoCodingApi,$localStorage, $log, $stateParams,
 			obj = {
 				src : function(){
 						if(arg.photos === undefined)
-						   return '/images/placeholder-sm-min.jpg';
+						   return 'Images/placeholder-sm-min.jpg';
 						else
 						return arg.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 200 });
 						}(),
@@ -768,7 +768,7 @@ app.directive('googleplace', function () {
 									if (place.photos != undefined)
 										return place.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 200 });
 									else
-										return 'images/placeholder-sm-min.jpg';
+										return 'Images/placeholder-sm-min.jpg';
 								} (),
 								rating: function () {
 									if (place.rating == undefined)
@@ -834,7 +834,7 @@ app.directive('googleplace', function () {
 					else {
 						var obj = {
 							name: results[i].name,
-							img: 'images/placeholder-sm-min.jpg',
+							img: 'Images/placeholder-sm-min.jpg',
 							rating: function () {
 								if (results[i].rating == undefined)
 									return 3;
@@ -916,7 +916,7 @@ function answerDetailController($rootScope,$localStorage,GoogleStaticMap,usersFr
 				 	
 				 // })
 				 if(response.photos === undefined)
-					  vm.bannerImg = '/images/placeholder-sm-min.jpg';
+					  vm.bannerImg = 'Images/placeholder-sm-min.jpg';
 
 				  else
 					vm.bannerImg = vm.detailObj.photos[0].getUrl({ 'maxWidth': 300, 'maxHeight': 200 });
