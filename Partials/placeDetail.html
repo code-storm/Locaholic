@@ -1,27 +1,29 @@
 ﻿<div class="col-md-12 c-reset rest-detail" style="z-index: 1000; display: block;height:100vh;">
 
     <div class="midbar-places-content" style="display: block;">
-        <div class="l-midbar-gradient" style="z-index: 1;">
-            <div class="" style="position: relative;z-index: -1; background-position: center;background-image: url({{detailObj.photos[0].getUrl({ 'maxWidth': 1600, 'maxHeight': 800 })}}); background-size: cover;">
+        <div style="position: fixed; right: 0; left: 0; top: 0; z-index: 10; "> 
+            <div class="l-midbar-gradient" style="z-index: 1;">
+                <div class="" style="position: relative;z-index: -1; background-position: center;background-image: url({{detailObj.photos[0].getUrl({ 'maxWidth': 1600, 'maxHeight': 800 })}}); background-size: cover;">
 
-                <div style="padding-bottom: 10px;padding-left: 10px;padding-top: 180px;padding-right: 10px;" class="c-font-white">
+                    <div style="padding-bottom: 10px;padding-left: 10px;padding-top: 180px;padding-right: 10px;" class="c-font-white">
 
-                    
+                        
+                    </div>
+
                 </div>
+                <div style="left: 0px;position: absolute;top: 7px;right: 0px;">
+                    <a href='javascript:void(0);' ng-click='goBack()'><i class="loca-back c-font-dark" style="padding: 10px 5px 10px 15px;float:left;"></i></a>
 
-            </div>
-            <div style="left: 0px;position: absolute;top: 7px;right: 0px;">
-                <a href='javascript:void(0);' ng-click='goBack()'><i class="loca-back c-font-dark" style="padding: 10px 5px 10px 15px;float:left;"></i></a>
-
-                <p class="c-font-dark c-font-15 c-font-slim c-center" style="margin: 0px;padding-right:20px;">{{detailObj.name}}
-                    <span class="c-font-capitalize c-font-dark c-font-11 c-center" style="display:block;">
-                        {{detailObj.types[0]}}
-                    </span>
-                </p>
-               
+                    <p class="c-font-dark c-font-15 c-font-slim c-center" style="margin: 0px;padding-right:20px;">{{detailObj.name}}
+                        <span class="c-font-capitalize c-font-dark c-font-11 c-center" style="display:block;">
+                            {{detailObj.types[0]}}
+                        </span>
+                    </p>
+                   
+                </div>
             </div>
         </div>
-        <div class="c-center l-map-shadow" style="background-position: center top;background-size: 629px 503px;padding-bottom: 10px;padding-top: 35px;position: relative;background-image: url(Images/map.jpg);background-attachment:fixed;">
+        <div class="c-center l-map-shadow" style="background-position: center top;background-size: 629px 503px;padding-bottom: 10px;padding-top: 35px;margin-top: 190px;position: relative;background-image: url(Images/map.jpg);background-attachment:fixed;">
             <p class="c-font-20" style="
 margin-bottom: 5px;
 "><i class="icon-map"></i></p>
