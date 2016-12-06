@@ -324,9 +324,9 @@ a.l-send-btn:hover .l-icon-transition > i
 
 .l-main-bg
 {
-  background: url('/images/bg2-min.png'),-webkit-linear-gradient( 90deg, rgb(209,202,217) 0%, rgb(58,92,176) 60%, rgb(8,29,80) 100%);
-  background: url('/images/bg2-min.png'), -moz-linear-gradient( 90deg, rgb(209,202,217) 0%, rgb(58,92,176) 60%, rgb(8,29,80) 100%);
-  background: url('/images/bg2-min.png'), -ms-linear-gradient( 90deg, rgb(209,202,217) 0%, rgb(58,92,176) 60%, rgb(8,29,80) 100%);
+  background: url('/Locaholic/Images/bg2-min.png'),-webkit-linear-gradient( 90deg, rgb(209,202,217) 0%, rgb(58,92,176) 60%, rgb(8,29,80) 100%);
+  background: url('/Locaholic/Images/bg2-min.png'), -moz-linear-gradient( 90deg, rgb(209,202,217) 0%, rgb(58,92,176) 60%, rgb(8,29,80) 100%);
+  background: url('/Locaholic/Images/bg2-min.png'), -ms-linear-gradient( 90deg, rgb(209,202,217) 0%, rgb(58,92,176) 60%, rgb(8,29,80) 100%);
   background-repeat: no-repeat, repeat;
   background-position: 50% 0, 50% 50%;
   -webkit-background-origin: padding-box;
