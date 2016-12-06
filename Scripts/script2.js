@@ -1034,7 +1034,7 @@ vm.showText = false;
 
 	function selectedClick(index) {
 		$log.log('Selected Slide Clicked callback triggered. \n == Slide index is: ' + index + ' ==');
-		window.location.href = window.location.origin + '/#/place/'+this.slides[index].pid;
+		window.location.href = window.location.origin + window.location.pathname + '#/place/'+this.slides[index].pid;
 	}
 
 	function slideChanged(index) {
