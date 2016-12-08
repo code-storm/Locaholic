@@ -46,6 +46,12 @@ height:100px !important;
     width: 40%;
     margin: 0 auto;
     display: block; }
+
+    .made-with-love
+    {
+      letter-spacing: 1px !important;
+    font-size: 10px !important;
+    }
 }
 
 @media (max-width: 991px) {
