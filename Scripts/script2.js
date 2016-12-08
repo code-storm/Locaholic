@@ -115,7 +115,7 @@ app.controller("locaCtrl", Customer)
 						{
 							if(facebookUser.providerData[0].uid != data.userId)
 								{
-									debugger;
+									//debugger;
 									// creating new user
 									data.name = facebookUser.displayName;
 									data.profilePictureUrl = facebookUser.photoURL;

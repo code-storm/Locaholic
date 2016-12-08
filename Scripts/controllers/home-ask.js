@@ -38,7 +38,7 @@ angular.module("locaApp")
                     }
                    // console.log("Each AS: ->",aValue.$id);
                     if(x==aS.length)
-                    {debugger;
+                    {//debugger;
                       var deferred = $q.defer();
                       var bannerImg = '';
                       deferred.resolve({ "answeredByUsers" : answeredByUsers , 'qS' : qValue, 'aS' : aValue, "totalAnswers" : aS.length });
@@ -56,10 +56,10 @@ var deferred2 = $q.defer();
                   $q.all(promises)  // promise 1 for getting sync answeredByUsers
                   .then(function(res)
                   {
-                    debugger;
+                    //debugger;
                     var profilePicArray = []
                     angular.forEach(res,function(proValue,proKey)
-                    {debugger;
+                    {//debugger;
                      // console.log("$q each",proKey,proValue);
                       PlacesApi.init();
                       var de = PlacesApi.search(proValue.aS.locationId);
@@ -80,7 +80,7 @@ var deferred2 = $q.defer();
                     $q.all(promises2)  // promise 2 for getting sync images from google and next combining with profilepics
                     .then(function(res2){
                      // console.log("res2",res2);
-                     debugger;
+                    // debugger;
                       var OBJ = res2[0];
                       angular.forEach(OBJ.answeredByUsers,function(answeredUserValue,answeredUserKey)
                       {
