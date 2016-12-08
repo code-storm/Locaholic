@@ -83,7 +83,47 @@ height:100px !important;
     .c-layout-header-mobile-fixed .c-layout-revo-slider-7 .m-singup-form {
       margin-top: 50px; }
     .c-layout-revo-slider-7 .m-singup-form .form-inline .form-group {
-      margin: 10px 10px; } }
+      margin: 10px 10px; } 
+    .l-main-placeholder::-webkit-input-placeholder {
+           /* WebKit, Blink, Edge */
+  font-size:12px;
+}
+.l-main-placeholder:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  font-size:12px;
+}
+.l-main-placeholder::-moz-placeholder { /* Mozilla Firefox 19+ */
+   font-size:12px;
+}
+.l-main-placeholder:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   font-size:12px;
+}
+.l-main-placeholder:placeholder-shown { /* Standard */
+  font-size:12px;
+}
+
+.l-main-placeholder:focus
+{
+    font-size:18px; 
+}
+
+.l-main-placeholder:focus::-webkit-input-placeholder {
+           /* WebKit, Blink, Edge */
+    font-size:18px;
+    
+}
+.l-main-placeholder:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  font-size:18px;
+}
+.l-main-placeholder:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+   font-size:18px;
+}
+.l-main-placeholder:focus:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size:18px;
+}
+.l-main-placeholder:focus:placeholder-shown { /* Standard */
+  font-size:18px;
+}
+    }
 
 
 	  .m-font div
