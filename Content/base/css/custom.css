@@ -51,6 +51,8 @@ height:100px !important;
     {
       letter-spacing: 1px !important;
     font-size: 10px !important;
+    left: calc(50% - 101px) !important;
+    bottom: -12px !important;
     }
 }
 
