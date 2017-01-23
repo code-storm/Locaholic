@@ -118,6 +118,13 @@ app.controller("locaCtrl", Customer)
 									//debugger;
 									// creating new user
 									data.name = facebookUser.displayName;
+									// Get the Storage service for the default app
+									var fireStorage = firebase.storage();
+									// Create a storage reference from our storage service
+									var profilePicsRef = fireStorage.ref('images/profilePictures/');
+									profilePicsRef.put(facebookUser.photoURL).then(function(snapshot){
+										console.log('Uploaded a blob or file!');
+									})
 									data.profilePictureUrl = facebookUser.photoURL;
 									data.userId = facebookUser.providerData[0].uid;
 									data.email = facebookUser.email;
