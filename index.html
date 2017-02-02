@@ -18,6 +18,16 @@
     <link href="locaholic2.css" rel="stylesheet" />
     <link href="Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" />
+    <!-- mautic script -->
+    <script>
+    (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
+        w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
+        m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://35.154.20.135/mautic/mtc.js','mt');
+
+    mt('send', 'pageview');
+</script>
+<!-- mautic script end -->
     <!-- Angular -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQXST2QsImOmGkzrKWNb47if0z-Xfw_9I&libraries=places" async defer></script>
     <script src="Scripts/angular.min.js"></script>

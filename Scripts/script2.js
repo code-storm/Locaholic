@@ -120,12 +120,27 @@ app.controller("locaCtrl", Customer)
 									data.name = facebookUser.displayName;
 									// Get the Storage service for the default app
 									var fireStorage = firebase.storage();
+								//	saveFile(facebookUser.photoURL);
+								var testImg = facebookUser.providerData[0].photoURL;//"https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png";
 									// Create a storage reference from our storage service
-									var profilePicsRef = fireStorage.ref('images/profilePictures/');
-									profilePicsRef.put(facebookUser.photoURL).then(function(snapshot){
-										console.log('Uploaded a blob or file!');
+									var profilePicsRef = fireStorage.ref('images/profilePictures/'+facebookUser.providerData[0].uid);
+									var Imgconverter = convertFileToDataURLviaFileReader;
+									Imgconverter(testImg,function(base64){ //debugger;
+										var data = base64.split(',');
+										var base64String = data[1];
+										var restArr = data[0].split(';');
+										var metadata = {
+										  contentType: restArr[0].slice(5),
+										};
+										console.log('base64',base64String);
+										profilePicsRef.putString(base64String, restArr[1]).then(function(snapshot) {
+										  console.log('Uploaded a base64 string!');
+										});
 									})
-									data.profilePictureUrl = facebookUser.photoURL;
+									// profilePicsRef.put(facebookUser.photoURL).then(function(snapshot){
+									// 	console.log('Uploaded a blob or file!');
+									// })
+									data.profilePictureUrl = facebookUser.providerData[0].photoURL;
 									data.userId = facebookUser.providerData[0].uid;
 									data.email = facebookUser.email;
 									data.createdDate = new Date().toString();
@@ -320,6 +335,14 @@ app.controller("locaCtrl", Customer)
 									return defer.promise;
 								}
 						}
+			})
+			.state("UserProfile",
+			{
+				url: '/profile',
+				templateUrl: 'Partials/Profile/userprofile.html',
+				controller: function($scope){
+
+				}
 			})
 
 	})
@@ -1070,3 +1093,19 @@ vm.showText = false;
 	// carousel3d settings end
 
 }
+
+
+// Download a file form a url.
+function convertFileToDataURLviaFileReader(url, callback) {
+		  var xhr = new XMLHttpRequest();
+		  xhr.responseType = 'blob';
+		  xhr.onload = function() {
+		    var reader = new FileReader();
+		    reader.onloadend = function() {
+		      callback(reader.result);
+		    }
+		    reader.readAsDataURL(xhr.response);
+		  };
+		  xhr.open('GET', url);
+		  xhr.send();
+		}
