@@ -210,7 +210,7 @@ function (Auth,$q)
     factory.getStaticMap = function(address,zoom,size,maptype,geometry)
     {
         var marker = window.location.origin + window.location.pathname + '/images/pin_marker.png';
-        return 'https://maps.googleapis.com/maps/api/staticmap?center='+encodeURIComponent(address)+'&zoom='+zoom+'&size='+size.width+'x'+size.height+'&maptype='+maptype+'&markers=icon:'+encodeURIComponent(marker)+'|'+geometry.lat+','+geometry.long+'&key=AIzaSyAQXST2QsImOmGkzrKWNb47if0z-Xfw_9I';
+        return 'https://maps.googleapis.com/maps/api/staticmap?center='+encodeURIComponent(address)+'&zoom='+zoom+'&size='+size.width+'x'+size.height+'&maptype='+maptype+'&markers=icon:'+encodeURIComponent(marker)+'|'+geometry.lat+','+geometry.long+'&key=AIzaSyBgFHYQ6Bvy7P0YiND6V7adXNk2jJePxjk';
     }
 
     return factory;
