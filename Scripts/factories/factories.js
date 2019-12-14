@@ -132,7 +132,7 @@ function (Auth,$q)
     factory.getPlaceDetail = function(placeId)
     {
        // debugger;
-       return $http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeId+"&key=AIzaSyAQXST2QsImOmGkzrKWNb47if0z-Xfw_9I");
+       return $http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid="+placeId+"&key=AIzaSyBgFHYQ6Bvy7P0YiND6V7adXNk2jJePxjk");
         
     }
 
