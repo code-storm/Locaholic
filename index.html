@@ -39,21 +39,25 @@
     
 
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+
 
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     
     <script>
   // Initialize Firebase
-	var config = {
-    apiKey: "AIzaSyDdnAWoaeUkJGs2sEuZ5wzcikjL6BugUbM",
+  var firebaseConfig = {
+    apiKey: "AIzaSyDOexI18o0lnHwfAZguEskqF8qPHZQO84M",
     authDomain: "testingfirebase-9cca2.firebaseapp.com",
     databaseURL: "https://testingfirebase-9cca2.firebaseio.com",
+    projectId: "testingfirebase-9cca2",
     storageBucket: "testingfirebase-9cca2.appspot.com",
-    messagingSenderId: "231465509054"
+    messagingSenderId: "231465509054",
+    appId: "1:231465509054:web:593a7c843be2bc545a7eef"
   };
-  firebase.initializeApp(config);
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 </script>
 
     <style>
